@@ -1,0 +1,824 @@
+[2022-07-21 13:09:17 +0000] Running:  /usr/local/share/enterprise/ghe-license-info | grep -Po '^\"seats\"\h?:\h?\K[\d]+' 2>&1 
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] 10
+[2022-07-21 13:09:17 +0000] Running:  /usr/local/share/enterprise/ghe-license-info | grep -Po '^\"unlimited_seating\"\h:\h\K.+' 2>&1
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] false
+[2022-07-21 13:09:17 +0000] Running: curl -s 127.0.0.1:1337/api/v3/enterprise/stats/all | jq .users.total_users 2>&1
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] 15
+[2022-07-21 13:09:17 +0000] Running: curl -s 127.0.0.1:1337/api/v3/enterprise/stats/all | jq .users.suspended_users 2>&1
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] 4
+[2022-07-21 13:09:17 +0000] Running:  grep RELEASE_VERSION /etc/github/enterprise-release | grep -Po '\d+\.\d+.\d+' 
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] 3.3.1
+[2022-07-21 13:09:17 +0000] Running: /bin/bash -c '. /usr/local/share/enterprise/ghe-actions-lib; action-services'
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] mps token actions
+[2022-07-21 13:09:17 +0000] Running: /bin/bash -c '. /usr/local/share/enterprise/ghe-actions-lib; actions-db-prefixes'
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] Token Mps Pipelines
+[2022-07-21 13:09:17 +0000] Running: [ -d .git ]
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] 
+[2022-07-21 13:09:17 +0000] Running: git rev-parse HEAD
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] 612659cd1a15451a67f2ff3f84b287acd6b818e8
+[2022-07-21 13:09:17 +0000] Running version: 612659cd1a15451a67f2ff3f84b287acd6b818e8
+[2022-07-21 13:09:17 +0000] If your environment is configured for High Availability, please collect the result from the primary and all replicas.
+[2022-07-21 13:09:17 +0000] Please share the following output and the contents of the file named full_details.log with support.
+[2022-07-21 13:09:17 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:09:17 +0000] Starting [Actions] Run ghe-actions-check (Class: ActionsCheck)...
+[2022-07-21 13:09:17 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:09:17 +0000] Exit Code: 0
+[2022-07-21 13:09:17 +0000] Result from the command:
+[2022-07-21 13:09:17 +0000] 
+[2022-07-21 13:09:17 +0000] Running: ghe-actions-check 2>&1
+[2022-07-21 13:09:19 +0000] Exit Code: 0
+[2022-07-21 13:09:19 +0000] Result from the command:
+[2022-07-21 13:09:19 +0000] MSSQL is healthy!
+Mps database is healthy!
+Mps nomad job is healthy!
+Mps AT health api is healthy!
+Token database is healthy!
+Token nomad job is healthy!
+Token AT health api is healthy!
+Actions database is healthy!
+Actions nomad job is healthy!
+Actions AT health api is healthy!
+[2022-07-21 13:09:19 +0000] [01/45] ✅ [Actions] Run ghe-actions-check - Passed basic checks
+[2022-07-21 13:09:19 +0000] Finished [Actions] Run ghe-actions-check (Class: ActionsCheck)
+[2022-07-21 13:09:19 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:09:19 +0000] Starting [Actions] Check Blob Storage (Class: ActionsBlobCheck)...
+[2022-07-21 13:09:19 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:09:19 +0000] Exit Code: 0
+[2022-07-21 13:09:19 +0000] Result from the command:
+[2022-07-21 13:09:19 +0000] 
+[2022-07-21 13:09:19 +0000] Running: ghe-actions-check -s blob 2>&1
+[2022-07-21 13:09:26 +0000] Exit Code: 0
+[2022-07-21 13:09:26 +0000] Result from the command:
+[2022-07-21 13:09:26 +0000] Blob Storage is healthy!
+[2022-07-21 13:09:26 +0000] [02/45] ✅ [Actions] Check Blob Storage - Passed basic blob checks
+[2022-07-21 13:09:26 +0000] Finished [Actions] Check Blob Storage (Class: ActionsBlobCheck)
+[2022-07-21 13:09:26 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:09:26 +0000] Starting [Actions] Check Services Connectivity (Class: ActionsServicesConnectivity)...
+[2022-07-21 13:09:26 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:09:26 +0000] Exit Code: 0
+[2022-07-21 13:09:26 +0000] Result from the command:
+[2022-07-21 13:09:26 +0000] 
+[2022-07-21 13:09:26 +0000] Running: ghe-actions-check-connectivity --source mps --target token 2>&1
+[2022-07-21 13:09:30 +0000] Exit Code: 0
+[2022-07-21 13:09:30 +0000] Result from the command:
+[2022-07-21 13:09:30 +0000] Check connectivity from Mps to Token...
+Connectivity from Mps to Token is healthy!
+[2022-07-21 13:09:30 +0000] Running: ghe-actions-check-connectivity --source mps --target actions 2>&1
+[2022-07-21 13:09:33 +0000] Exit Code: 0
+[2022-07-21 13:09:33 +0000] Result from the command:
+[2022-07-21 13:09:33 +0000] Check connectivity from Mps to Actions...
+Connectivity from Mps to Actions is healthy!
+[2022-07-21 13:09:33 +0000] Running: ghe-actions-check-connectivity --source token --target mps 2>&1
+[2022-07-21 13:09:37 +0000] Exit Code: 0
+[2022-07-21 13:09:37 +0000] Result from the command:
+[2022-07-21 13:09:37 +0000] Check connectivity from Token to Mps...
+Connectivity from Token to Mps is healthy!
+[2022-07-21 13:09:37 +0000] Running: ghe-actions-check-connectivity --source token --target actions 2>&1
+[2022-07-21 13:09:40 +0000] Exit Code: 0
+[2022-07-21 13:09:40 +0000] Result from the command:
+[2022-07-21 13:09:40 +0000] Check connectivity from Token to Actions...
+Connectivity from Token to Actions is healthy!
+[2022-07-21 13:09:40 +0000] Running: ghe-actions-check-connectivity --source actions --target mps 2>&1
+[2022-07-21 13:09:44 +0000] Exit Code: 0
+[2022-07-21 13:09:44 +0000] Result from the command:
+[2022-07-21 13:09:44 +0000] Check connectivity from Actions to Mps...
+Connectivity from Actions to Mps is healthy!
+[2022-07-21 13:09:44 +0000] Running: ghe-actions-check-connectivity --source actions --target token 2>&1
+[2022-07-21 13:09:48 +0000] Exit Code: 0
+[2022-07-21 13:09:48 +0000] Result from the command:
+[2022-07-21 13:09:48 +0000] Check connectivity from Actions to Token...
+Connectivity from Actions to Token is healthy!
+[2022-07-21 13:09:48 +0000] [03/45] ✅ [Actions] Check Services Connectivity - All Actions Services can Communicate
+[2022-07-21 13:09:48 +0000] Finished [Actions] Check Services Connectivity (Class: ActionsServicesConnectivity)
+[2022-07-21 13:09:48 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:09:48 +0000] Starting [Actions] Validate Starter Workflows (Class: ValidateStarterWorkflows)...
+[2022-07-21 13:09:48 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:09:48 +0000] Exit Code: 0
+[2022-07-21 13:09:48 +0000] Result from the command:
+[2022-07-21 13:09:48 +0000] 
+[2022-07-21 13:09:48 +0000] Running: git --git-dir=/data/ghes-actions/current/repos/actions_starter-workflows/.git rev-parse HEAD 2>&1
+[2022-07-21 13:09:48 +0000] Exit Code: 0
+[2022-07-21 13:09:48 +0000] Result from the command:
+[2022-07-21 13:09:48 +0000] 345e123521871dfb3c001407bfb179465b685359
+[2022-07-21 13:09:48 +0000] Running: ghe-config app.actions.actions-org
+[2022-07-21 13:09:48 +0000] Exit Code: 0
+[2022-07-21 13:09:48 +0000] Result from the command:
+[2022-07-21 13:09:48 +0000] test-github-actions-org
+[2022-07-21 13:09:48 +0000] Running:  echo "puts Repository.nwo('test-github-actions-org/starter-workflows').commits.exist?('345e123521871dfb3c001407bfb179465b685359')" | github-env bin/safe-ruby -r ./config/environment 2>&1 
+[2022-07-21 13:10:54 +0000] Exit Code: 0
+[2022-07-21 13:10:54 +0000] Result from the command:
+[2022-07-21 13:10:54 +0000] true
+[2022-07-21 13:10:54 +0000] [04/45] ✅ [Actions] Validate Starter Workflows - The appliance has the correct commit
+[2022-07-21 13:10:54 +0000] Finished [Actions] Validate Starter Workflows (Class: ValidateStarterWorkflows)
+[2022-07-21 13:10:54 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:10:54 +0000] Starting [Actions] Check State Matches Database (Class: ActionsStateMatchesDBs)...
+[2022-07-21 13:10:54 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:10:54 +0000] Exit Code: 0
+[2022-07-21 13:10:54 +0000] Result from the command:
+[2022-07-21 13:10:54 +0000] 
+[2022-07-21 13:10:54 +0000] Running: ghe-actions-console -s mps -c '(dir ConfigDbName).Value' 2>&1
+[2022-07-21 13:10:58 +0000] Exit Code: 0
+[2022-07-21 13:10:58 +0000] Result from the command:
+[2022-07-21 13:10:58 +0000] LR mps> Mps_Configuration
+[2022-07-21 13:10:58 +0000] Running: ghe-mssql-console -y -n -q "
+    SET NOCOUNT ON;
+    SELECT COUNT(1)
+    FROM   sys.databases
+    WHERE  name = 'Mps_Configuration'" 2>&1
+[2022-07-21 13:10:58 +0000] Exit Code: 0
+[2022-07-21 13:10:58 +0000] Result from the command:
+[2022-07-21 13:10:58 +0000]           1
+[2022-07-21 13:10:58 +0000] Found Mps_Configuration
+[2022-07-21 13:10:58 +0000] Running: cat /data/user/actions/states/mps_state 2>&1
+[2022-07-21 13:10:58 +0000] Exit Code: 0
+[2022-07-21 13:10:58 +0000] Result from the command:
+[2022-07-21 13:10:58 +0000] complete
+[2022-07-21 13:10:58 +0000] Running: ghe-actions-console -s token -c '(dir ConfigDbName).Value' 2>&1
+[2022-07-21 13:11:02 +0000] Exit Code: 0
+[2022-07-21 13:11:02 +0000] Result from the command:
+[2022-07-21 13:11:02 +0000] LR token> Token_Configuration
+[2022-07-21 13:11:02 +0000] Running: ghe-mssql-console -y -n -q "
+    SET NOCOUNT ON;
+    SELECT COUNT(1)
+    FROM   sys.databases
+    WHERE  name = 'Token_Configuration'" 2>&1
+[2022-07-21 13:11:02 +0000] Exit Code: 0
+[2022-07-21 13:11:02 +0000] Result from the command:
+[2022-07-21 13:11:02 +0000]           1
+[2022-07-21 13:11:02 +0000] Found Token_Configuration
+[2022-07-21 13:11:02 +0000] Running: cat /data/user/actions/states/token_state 2>&1
+[2022-07-21 13:11:02 +0000] Exit Code: 0
+[2022-07-21 13:11:02 +0000] Result from the command:
+[2022-07-21 13:11:02 +0000] complete
+[2022-07-21 13:11:02 +0000] Running: ghe-actions-console -s actions -c '(dir ConfigDbName).Value' 2>&1
+[2022-07-21 13:11:05 +0000] Exit Code: 0
+[2022-07-21 13:11:05 +0000] Result from the command:
+[2022-07-21 13:11:05 +0000] LR actions> Pipelines_Configuration
+[2022-07-21 13:11:05 +0000] Running: ghe-mssql-console -y -n -q "
+    SET NOCOUNT ON;
+    SELECT COUNT(1)
+    FROM   sys.databases
+    WHERE  name = 'Pipelines_Configuration'" 2>&1
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000]           1
+[2022-07-21 13:11:06 +0000] Found Pipelines_Configuration
+[2022-07-21 13:11:06 +0000] Running: cat /data/user/actions/states/actions_state 2>&1
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] complete
+[2022-07-21 13:11:06 +0000] [05/45] ✅ [Actions] Check State Matches Database - All Actions States match DBs
+[2022-07-21 13:11:06 +0000] Finished [Actions] Check State Matches Database (Class: ActionsStateMatchesDBs)
+[2022-07-21 13:11:06 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:06 +0000] Starting [Actions] Check Reserved Users (Class: ActionsCheckReservedNames)...
+[2022-07-21 13:11:06 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] 
+[2022-07-21 13:11:06 +0000] Running:  ghe-config app.actions.actions-org 
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] test-github-actions-org
+[2022-07-21 13:11:06 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT users.login FROM users WHERE users.login=\"test-github-actions-org\" AND users.type=\"Organization\";" 
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] login
+test-github-actions-org
+[2022-07-21 13:11:06 +0000] [06/45] ✅ [Actions] Check Reserved Users - All reserved users are available
+[2022-07-21 13:11:06 +0000] Finished [Actions] Check Reserved Users (Class: ActionsCheckReservedNames)
+[2022-07-21 13:11:06 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:06 +0000] Starting [Actions] Check Bot Integration (Class: ActionsCheckIntegrationConfiguration)...
+[2022-07-21 13:11:06 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] 
+[2022-07-21 13:11:06 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT users.login, users.id FROM users INNER JOIN integrations ON users.id=integrations.bot_id WHERE users.login=\"github-actions[bot]\" AND integrations.name=\"GitHub Actions\";" 
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] login	id
+github-actions[bot]	15
+[2022-07-21 13:11:06 +0000] [07/45] ✅ [Actions] Check Bot Integration - The GitHub-Actions bot integration is configured correctly
+[2022-07-21 13:11:06 +0000] Finished [Actions] Check Bot Integration (Class: ActionsCheckIntegrationConfiguration)
+[2022-07-21 13:11:06 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:06 +0000] Starting [Actions] Check User Status (Class: ActionsIntegrationUserSuspended)...
+[2022-07-21 13:11:06 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] 
+[2022-07-21 13:11:06 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT login FROM users WHERE login = \"github-actions[bot]\" AND suspended_at IS NOT NULL;" 
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] 
+[2022-07-21 13:11:06 +0000] [08/45] ✅ [Actions] Check User Status - The GitHub-Actions user is active
+[2022-07-21 13:11:06 +0000] Finished [Actions] Check User Status (Class: ActionsIntegrationUserSuspended)
+[2022-07-21 13:11:06 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:06 +0000] Starting [Actions] Check Proxy (Class: ActionsProxyCheck)...
+[2022-07-21 13:11:06 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] 
+[2022-07-21 13:11:06 +0000] Running: ghe-config core.http-proxy
+[2022-07-21 13:11:06 +0000] Exit Code: 0
+[2022-07-21 13:11:06 +0000] Result from the command:
+[2022-07-21 13:11:06 +0000] 
+[2022-07-21 13:11:06 +0000] [09/45] 🟡 [Actions] Check Proxy - skipped: No proxy found
+[2022-07-21 13:11:06 +0000] Finished [Actions] Check Proxy (Class: ActionsProxyCheck)
+[2022-07-21 13:11:06 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:06 +0000] Starting [Actions] Check Open Ports (Class: ActionsCheckPorts)...
+[2022-07-21 13:11:06 +0000] Running: echo 'SELECT lp.port, ps.name FROM listening_ports AS lp INNER JOIN processes AS ps ON lp.pid = ps.pid
+                 WHERE protocol = 6 AND port in (5000,5001);' | osqueryi --list --noheader 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 5000|credz
+5001|launch-deployer
+[2022-07-21 13:11:07 +0000] [10/45] ✅ [Actions] Check Open Ports - Passed ports checks
+[2022-07-21 13:11:07 +0000] Finished [Actions] Check Open Ports (Class: ActionsCheckPorts)
+[2022-07-21 13:11:07 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:07 +0000] Starting [Actions] Extra Database Partitions (Class: ActionsPartitionsCheck)...
+[2022-07-21 13:11:07 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] Running: ghe-mssql-console -y -n -q "SET NOCOUNT ON;
+             SELECT name FROM sys.databases WHERE name LIKE 'Token%' AND name != 'Token_configuration' AND name NOT IN
+             (SELECT REPLACE(DatabaseName, 'localhost;','') FROM [Token_configuration].[dbo].[tbl_Database]);" 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] Running: ghe-mssql-console -y -n -q "SET NOCOUNT ON;
+             SELECT name FROM sys.databases WHERE name LIKE 'Mps%' AND name != 'Mps_configuration' AND name NOT IN
+             (SELECT REPLACE(DatabaseName, 'localhost;','') FROM [Mps_configuration].[dbo].[tbl_Database]);" 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] Running: ghe-mssql-console -y -n -q "SET NOCOUNT ON;
+             SELECT name FROM sys.databases WHERE name LIKE 'Pipelines%' AND name != 'Pipelines_configuration' AND name NOT IN
+             (SELECT REPLACE(DatabaseName, 'localhost;','') FROM [Pipelines_configuration].[dbo].[tbl_Database]);" 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] [11/45] ✅ [Actions] Extra Database Partitions - All database partitions are valid
+[2022-07-21 13:11:07 +0000] Finished [Actions] Extra Database Partitions (Class: ActionsPartitionsCheck)
+[2022-07-21 13:11:07 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:07 +0000] Starting [Actions] Multiple database partitions and outdated ghe-repl-status-mssql (Class: ActionsReplicaPartitionCheck)...
+[2022-07-21 13:11:07 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] [12/45] 🟡 [Actions] Multiple database partitions and outdated ghe-repl-status-mssql - skipped: pre-checks failed: Must be running on replica
+[2022-07-21 13:11:07 +0000] Finished [Actions] Multiple database partitions and outdated ghe-repl-status-mssql (Class: ActionsReplicaPartitionCheck)
+[2022-07-21 13:11:07 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:07 +0000] Starting [Actions] Database Replication Certificate (Class: ActionsReplicationCertificateCheck)...
+[2022-07-21 13:11:07 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] Running: ghe-mssql-console -y -n -q "SET NOCOUNT ON;
+      SELECT start_date, '|', expiry_date, '|',
+        CASE
+          WHEN expiry_date < GETUTCDATE() THEN '1' ELSE '0'
+        END AS is_expired
+      FROM   master.sys.certificates
+      WHERE  name = 'dbm_certificate';" 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] [13/45] 🟡 [Actions] Database Replication Certificate - skipped: No replication certificate found
+[2022-07-21 13:11:07 +0000] Finished [Actions] Database Replication Certificate (Class: ActionsReplicationCertificateCheck)
+[2022-07-21 13:11:07 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:07 +0000] Starting [Actions] Availability Group Configuration (Class: ActionsAvailabilityGroupCheck)...
+[2022-07-21 13:11:07 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:07 +0000] Exit Code: 0
+[2022-07-21 13:11:07 +0000] Result from the command:
+[2022-07-21 13:11:07 +0000] 
+[2022-07-21 13:11:07 +0000] Running: ghe-mssql-console -y -n -q "SET NOCOUNT ON;
+           SELECT Count(*) FROM sys.availability_groups WHERE name = 'ha'" 2>&1
+[2022-07-21 13:11:08 +0000] Exit Code: 0
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000]           0
+[2022-07-21 13:11:08 +0000] [14/45] ✅ [Actions] Availability Group Configuration - Availability group checks passed
+[2022-07-21 13:11:08 +0000] Finished [Actions] Availability Group Configuration (Class: ActionsAvailabilityGroupCheck)
+[2022-07-21 13:11:08 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:08 +0000] Starting [Actions] Check for setup-failures-detected flag (Class: ActionsSetupFailuresCheck)...
+[2022-07-21 13:11:08 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:08 +0000] Exit Code: 0
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000] 
+[2022-07-21 13:11:08 +0000] Running: ghe-config --true app.actions.setup-failures-detected 2>&1
+[2022-07-21 13:11:08 +0000] Exit Code: 1
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000] 
+[2022-07-21 13:11:08 +0000] [15/45] ✅ [Actions] Check for setup-failures-detected flag - The app.actions.setup-failures-detected flag is not set
+[2022-07-21 13:11:08 +0000] Finished [Actions] Check for setup-failures-detected flag (Class: ActionsSetupFailuresCheck)
+[2022-07-21 13:11:08 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:08 +0000] Starting [Actions] Check for updates-disabled flag (Class: ActionsUpdatesDisabledCheck)...
+[2022-07-21 13:11:08 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:08 +0000] Exit Code: 0
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000] 
+[2022-07-21 13:11:08 +0000] Running: ghe-config --true app.actions.updates-disabled 2>&1
+[2022-07-21 13:11:08 +0000] Exit Code: 1
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000] 
+[2022-07-21 13:11:08 +0000] [16/45] ✅ [Actions] Check for updates-disabled flag - The app.actions.updates-disabled flag is not set
+[2022-07-21 13:11:08 +0000] Finished [Actions] Check for updates-disabled flag (Class: ActionsUpdatesDisabledCheck)
+[2022-07-21 13:11:08 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:08 +0000] Starting [Actions] Check that TLS is enabled (Class: ActionsTLSEnabled)...
+[2022-07-21 13:11:08 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:08 +0000] Exit Code: 0
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000] 
+[2022-07-21 13:11:08 +0000] Running: ghe-config --true github-ssl.enabled 2>&1
+[2022-07-21 13:11:08 +0000] Exit Code: 0
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000] 
+[2022-07-21 13:11:08 +0000] [17/45] ✅ [Actions] Check that TLS is enabled - The github-ssl.enabled flag is set to true
+[2022-07-21 13:11:08 +0000] Finished [Actions] Check that TLS is enabled (Class: ActionsTLSEnabled)
+[2022-07-21 13:11:08 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:08 +0000] Starting [AWS] Retry Mode (Class: AWSRetryMode)...
+[2022-07-21 13:11:08 +0000] Running: whoami
+[2022-07-21 13:11:08 +0000] Exit Code: 0
+[2022-07-21 13:11:08 +0000] Result from the command:
+[2022-07-21 13:11:08 +0000] root
+[2022-07-21 13:11:08 +0000] Running: grep -r -F 'Amazon.Runtime.AmazonClientException: The initial request cannot be attempted because capacity could not be obtained.' /data/user/nomad/alloc 2>&1
+[2022-07-21 13:11:09 +0000] Exit Code: 1
+[2022-07-21 13:11:09 +0000] Result from the command:
+[2022-07-21 13:11:09 +0000] 
+[2022-07-21 13:11:09 +0000] [18/45] ✅ [AWS] Retry Mode - No evidence of retry problem
+[2022-07-21 13:11:09 +0000] Finished [AWS] Retry Mode (Class: AWSRetryMode)
+[2022-07-21 13:11:09 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:09 +0000] Starting [AWS] Using NTLM (Class: AWSUsingNTLM)...
+[2022-07-21 13:11:09 +0000] Running: whoami
+[2022-07-21 13:11:09 +0000] Exit Code: 0
+[2022-07-21 13:11:09 +0000] Result from the command:
+[2022-07-21 13:11:09 +0000] root
+[2022-07-21 13:11:09 +0000] Running: grep -r -F 'NTLM authentication requires the GSSAPI' /data/user/nomad/alloc 2>&1
+[2022-07-21 13:11:09 +0000] Exit Code: 1
+[2022-07-21 13:11:09 +0000] Result from the command:
+[2022-07-21 13:11:09 +0000] 
+[2022-07-21 13:11:09 +0000] [19/45] ✅ [AWS] Using NTLM - No evidence of problems with NTLM
+[2022-07-21 13:11:09 +0000] Finished [AWS] Using NTLM (Class: AWSUsingNTLM)
+[2022-07-21 13:11:09 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:09 +0000] Starting [System] Maintenance Mode (Class: MaintenanceMode)...
+[2022-07-21 13:11:09 +0000] Running: ghe-maintenance -q 2>&1
+[2022-07-21 13:11:09 +0000] Exit Code: 1
+[2022-07-21 13:11:09 +0000] Result from the command:
+[2022-07-21 13:11:09 +0000] maintenance mode not set
+[2022-07-21 13:11:09 +0000] [20/45] ✅ [System] Maintenance Mode - The instance is not in maintenance mode
+[2022-07-21 13:11:09 +0000] Finished [System] Maintenance Mode (Class: MaintenanceMode)
+[2022-07-21 13:11:09 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:09 +0000] Starting [MSSQL] Unable to read instance id (Class: MSSqlUnableToReadInstanceId)...
+[2022-07-21 13:11:09 +0000] Running: whoami
+[2022-07-21 13:11:09 +0000] Exit Code: 0
+[2022-07-21 13:11:09 +0000] Result from the command:
+[2022-07-21 13:11:09 +0000] root
+[2022-07-21 13:11:09 +0000] Running: grep -r -F -m 5 "sqlservr: Unable to read instance id from /var/opt/mssql/.system/instance_id" /data/user/nomad/alloc 2>&1
+[2022-07-21 13:11:10 +0000] Exit Code: 1
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] 
+[2022-07-21 13:11:10 +0000] [21/45] ✅ [MSSQL] Unable to read instance id - No problems reading instance id detected
+[2022-07-21 13:11:10 +0000] Finished [MSSQL] Unable to read instance id (Class: MSSqlUnableToReadInstanceId)
+[2022-07-21 13:11:10 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:10 +0000] Starting [MSSQL] Page Allocation Failures (Class: MSSqlPageAllocationFailures)...
+[2022-07-21 13:11:10 +0000] Running: whoami
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] root
+[2022-07-21 13:11:10 +0000] Running: grep "Failed allocate pages" /data/user/mssql/log/errorlog 2>&1
+[2022-07-21 13:11:10 +0000] Exit Code: 1
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] 
+[2022-07-21 13:11:10 +0000] [22/45] ✅ [MSSQL] Page Allocation Failures - No Page Allocation Failures Detected
+[2022-07-21 13:11:10 +0000] Finished [MSSQL] Page Allocation Failures (Class: MSSqlPageAllocationFailures)
+[2022-07-21 13:11:10 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:10 +0000] Starting [MSSQL] Allocated Memory (Class: MSSqlAllocatedMemory)...
+[2022-07-21 13:11:10 +0000] Running: whoami
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] root
+[2022-07-21 13:11:10 +0000] Running: grep ".*Server.*Detected .* of RAM\. This is an informational message; no user action is required\." /data/user/mssql/log/errorlog 2>&1
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] 2022-01-24 11:16:53.29 Server      Detected 5079 MB of RAM. This is an informational message; no user action is required.
+[2022-07-21 13:11:10 +0000] Found allocation for 5079MB
+[2022-07-21 13:11:10 +0000] [23/45] ✅ [MSSQL] Allocated Memory - Found 5079MB Allocated my MSSQL, which meets the 2GB limit
+[2022-07-21 13:11:10 +0000] Finished [MSSQL] Allocated Memory (Class: MSSqlAllocatedMemory)
+[2022-07-21 13:11:10 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:10 +0000] Starting [MSSQL] OOM Memory Allocation Failures (Class: MSSqlOomMemoryAllocationFailures)...
+[2022-07-21 13:11:10 +0000] Running: whoami
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] root
+[2022-07-21 13:11:10 +0000] Running: grep "There was a memory allocation failure during connection establishment" /data/user/mssql/log/errorlog 2>&1
+[2022-07-21 13:11:10 +0000] Exit Code: 1
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] 
+[2022-07-21 13:11:10 +0000] [24/45] ✅ [MSSQL] OOM Memory Allocation Failures - No OOM Memory Allocation Failures Detected
+[2022-07-21 13:11:10 +0000] Finished [MSSQL] OOM Memory Allocation Failures (Class: MSSqlOomMemoryAllocationFailures)
+[2022-07-21 13:11:10 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:10 +0000] Starting [MSSQL] Health Check (Class: MSSqlHealthCheck)...
+[2022-07-21 13:11:10 +0000] Running: whoami
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] root
+[2022-07-21 13:11:10 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] 
+[2022-07-21 13:11:10 +0000] Running:  ghe-mssql-console -y -q "print CONCAT(@@SERVERNAME, ' is alive')" 2>&1
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] github-tooling-ibdp-calibo-com is alive
+[2022-07-21 13:11:10 +0000] [25/45] ✅ [MSSQL] Health Check - MSSQL Help check Passed
+[2022-07-21 13:11:10 +0000] Finished [MSSQL] Health Check (Class: MSSqlHealthCheck)
+[2022-07-21 13:11:10 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:10 +0000] Starting [MSSQL] State Check (Class: MSSqlStateCheck)...
+[2022-07-21 13:11:10 +0000] Running: whoami
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] root
+[2022-07-21 13:11:10 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] 
+[2022-07-21 13:11:10 +0000] Running:  ghe-mssql-console -y -q "print CONCAT(@@SERVERNAME, ' is alive')" 2>&1 
+[2022-07-21 13:11:10 +0000] Exit Code: 0
+[2022-07-21 13:11:10 +0000] Result from the command:
+[2022-07-21 13:11:10 +0000] github-tooling-ibdp-calibo-com is alive
+[2022-07-21 13:11:10 +0000] Running:  ghe-mssql-console -y -n -r -q "
+        SET NOCOUNT ON;
+        SELECT name, state_desc
+        FROM   sys.databases
+        WHERE  state_desc != 'ONLINE'
+        " 2>&1
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] 
+[2022-07-21 13:11:11 +0000] [26/45] ✅ [MSSQL] State Check - All Databases are Online
+[2022-07-21 13:11:11 +0000] Finished [MSSQL] State Check (Class: MSSqlStateCheck)
+[2022-07-21 13:11:11 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:11 +0000] Starting [MSSQL] Missing Availability Group (Class: MSSqlMissingAvailabilityGroup)...
+[2022-07-21 13:11:11 +0000] Running: whoami
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] root
+[2022-07-21 13:11:11 +0000] Running: grep "The availability replica is not found in the availability group configuration" /data/user/mssql/log/errorlog 2>&1
+[2022-07-21 13:11:11 +0000] Exit Code: 1
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] 
+[2022-07-21 13:11:11 +0000] [27/45] ✅ [MSSQL] Missing Availability Group - No missing availability group
+[2022-07-21 13:11:11 +0000] Finished [MSSQL] Missing Availability Group (Class: MSSqlMissingAvailabilityGroup)
+[2022-07-21 13:11:11 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:11 +0000] Starting [MSSQL] Seeding In Progress (Class: MSSqlSeedingInProgress)...
+[2022-07-21 13:11:11 +0000] Running: whoami
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] root
+[2022-07-21 13:11:11 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] 
+[2022-07-21 13:11:11 +0000] Running:  ghe-mssql-console -y -q "print CONCAT(@@SERVERNAME, ' is alive')" 2>&1 
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] github-tooling-ibdp-calibo-com is alive
+[2022-07-21 13:11:11 +0000] Running:  ghe-mssql-console -y -n -r -q "
+        SET NOCOUNT ON;
+        SELECT operational_state_desc,
+               connected_state_desc,
+               recovery_health_desc,
+               synchronization_health_desc
+        FROM   sys.dm_hadr_availability_replica_states
+        WHERE  operational_state_desc = 'ONLINE'
+               AND connected_state_desc = 'CONNECTED'
+               AND recovery_health_desc = 'ONLINE_IN_PROGRESS'
+               AND synchronization_health_desc = 'NOT_HEALTHY'
+        " 2>&1
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] 
+[2022-07-21 13:11:11 +0000] [28/45] ✅ [MSSQL] Seeding In Progress - Seeding does not appear to be in progress
+[2022-07-21 13:11:11 +0000] Finished [MSSQL] Seeding In Progress (Class: MSSqlSeedingInProgress)
+[2022-07-21 13:11:11 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:11 +0000] Starting [MSSQL] Replica State (Class: MSSqlReplicaState)...
+[2022-07-21 13:11:11 +0000] Running: whoami
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] root
+[2022-07-21 13:11:11 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] 
+[2022-07-21 13:11:11 +0000] Running:  ghe-mssql-console -y -q "print CONCAT(@@SERVERNAME, ' is alive')" 2>&1 
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] github-tooling-ibdp-calibo-com is alive
+[2022-07-21 13:11:11 +0000] Running:  ghe-mssql-console -y -n -r -q "
+        SET ANSI_WARNINGS OFF;
+        SET NOCOUNT ON;
+        SELECT role_desc,
+               operational_state_desc,
+               connected_state_desc,
+               recovery_health_desc,
+               synchronization_health_desc
+        FROM   sys.dm_hadr_availability_replica_states
+        WHERE
+               operational_state_desc IN('PENDING', 'PENDING_FAILOVER', 'OFFLINE', 'FAILED', 'FAILED_NO_QUORUM')
+               OR connected_state_desc = 'DISCONNECTED'
+               OR recovery_health_desc = 'ONLINE_IN_PROGRESS'
+               OR synchronization_health_desc IN('NOT_HEALTHY', 'PARTIALLY_HEALTHY')
+        " 2>&1
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] 
+[2022-07-21 13:11:11 +0000] [29/45] ✅ [MSSQL] Replica State - No Replication state problems found
+[2022-07-21 13:11:11 +0000] Finished [MSSQL] Replica State (Class: MSSqlReplicaState)
+[2022-07-21 13:11:11 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:11 +0000] Starting [MSSQL] Database backups (Class: MSSqlDatabaseBackups)...
+[2022-07-21 13:11:11 +0000] Running: whoami
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] root
+[2022-07-21 13:11:11 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:11 +0000] Exit Code: 0
+[2022-07-21 13:11:11 +0000] Result from the command:
+[2022-07-21 13:11:11 +0000] 
+[2022-07-21 13:11:11 +0000] Running:  ghe-mssql-console -y -q "print CONCAT(@@SERVERNAME, ' is alive')" 2>&1 
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] github-tooling-ibdp-calibo-com is alive
+[2022-07-21 13:11:12 +0000] Running:  ghe-mssql-console -y -n -q "
+        SET NOCOUNT ON;
+        SELECT name
+        FROM   sys.databases
+        WHERE  sys.databases.recovery_model_desc = 'FULL'
+               AND name NOT IN('master', 'tempdb', 'model', 'msdb')
+        " 2>&1
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] 
+[2022-07-21 13:11:12 +0000] [30/45] 🟡 [MSSQL] Database backups - skipped: Did not find any recoverable DBs
+[2022-07-21 13:11:12 +0000] Finished [MSSQL] Database backups (Class: MSSqlDatabaseBackups)
+[2022-07-21 13:11:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:12 +0000] Starting [MSSQL] Transaction Logs (Class: MSSqlTransactionLogs)...
+[2022-07-21 13:11:12 +0000] Running: whoami
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] root
+[2022-07-21 13:11:12 +0000] Running: ghe-config --true app.actions.enabled 2>&1
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] 
+[2022-07-21 13:11:12 +0000] Running:  ghe-mssql-console -y -q "print CONCAT(@@SERVERNAME, ' is alive')" 2>&1 
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] github-tooling-ibdp-calibo-com is alive
+[2022-07-21 13:11:12 +0000] Running:  ghe-mssql-console -y -n -q "
+        SET NOCOUNT ON;
+        SELECT cntr_value/1024.0 AS [Log Size (MB)]
+        FROM   sys.dm_os_performance_counters
+        WHERE  instance_name = '_Total'
+               AND object_name LIKE '%Databases%'
+               AND counter_name IN ('Log File(s) Size (KB)', 'Log File(s) Used Size (KB)')
+               AND cntr_value > 0
+        ORDER BY counter_name
+        " 2>&1
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000]                   835.914062
+                   46.046875
+[2022-07-21 13:11:12 +0000] MSSQL Transaction Log Size 46MB used of total 835MB
+[2022-07-21 13:11:12 +0000] Running:  echo "select blocks*blocks_size/(1024 * 1024) from mounts where path = '/data/user';" | osqueryi --list --noheader 2>&1 
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] 302118
+[2022-07-21 13:11:12 +0000] /user/data size 302118 MB
+[2022-07-21 13:11:12 +0000] Running:  docker ps --format '{{.Names}}' --filter name=mssql --filter status=running 
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] mssql-b9d79545-bd23-e94e-f84d-5d5c3f20b836
+[2022-07-21 13:11:12 +0000] Running:  docker exec mssql-b9d79545-bd23-e94e-f84d-5d5c3f20b836 env | grep MSSQL_MEMORY_LIMIT_MB | cut -d'=' -f2 
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Result from the command:
+[2022-07-21 13:11:12 +0000] 5079
+[2022-07-21 13:11:12 +0000] [31/45] ✅ [MSSQL] Transaction Logs - Transaction Logs are using 835MB which is 0% of /data/user and 16% of MSSQL allocated memory
+[2022-07-21 13:11:12 +0000] Finished [MSSQL] Transaction Logs (Class: MSSqlTransactionLogs)
+[2022-07-21 13:11:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:12 +0000] Starting [Licences] Seat Limitations (Class: SeatLimitations)...
+[2022-07-21 13:11:12 +0000] Licence seats           10
+[2022-07-21 13:11:12 +0000] Total users             15
+[2022-07-21 13:11:12 +0000] Suspended users          4
+[2022-07-21 13:11:12 +0000] Active Seats            11 (total - suspended)
+[2022-07-21 13:11:12 +0000] Unlimited Seats     false
+[2022-07-21 13:11:12 +0000] [32/45] ❗️ [Licences] Seat Limitations - The number of active users is at or above license seat limit (11/10) - see https://github.com/github/enterprise-diagnostic-scripts/issues/5
+[2022-07-21 13:11:12 +0000] Finished [Licences] Seat Limitations (Class: SeatLimitations)
+[2022-07-21 13:11:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:12 +0000] Starting [Secrets] Deployer Secrets Check (Class: DeployerSecretsCheck)...
+[2022-07-21 13:11:12 +0000] Running:  ghe-config secrets.launch.deployer-hmac-secret  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-deployer.hcl | grep -Po 'DEPLOYER_HMAC_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-receiver.hcl | grep -Po 'DEPLOYER_HMAC_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/github/00-env.hcl | grep -Po 'ENTERPRISE_LAUNCH_DEPLOYER_HMAC_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] [33/45] ✅ [Secrets] Deployer Secrets Check - All launch secrets match
+[2022-07-21 13:11:12 +0000] Finished [Secrets] Deployer Secrets Check (Class: DeployerSecretsCheck)
+[2022-07-21 13:11:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:12 +0000] Starting [Secrets] Credz Secrets Check (Class: CredzSecretsCheck)...
+[2022-07-21 13:11:12 +0000] Running:  ghe-config secrets.launch.credz-hmac-secret  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-deployer.hcl | grep -Po 'CREDZ_HMAC_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-receiver.hcl | grep -Po 'CREDZ_HMAC_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-credz.hcl | grep -Po 'CREDZ_HMAC_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/github/00-env.hcl | grep -Po 'ENTERPRISE_LAUNCH_CREDZ_HMAC_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] [34/45] ✅ [Secrets] Credz Secrets Check - All credz secrets match
+[2022-07-21 13:11:12 +0000] Finished [Secrets] Credz Secrets Check (Class: CredzSecretsCheck)
+[2022-07-21 13:11:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:12 +0000] Starting [Secrets] Webhook Secrets Check (Class: WebhookSecretsCheck)...
+[2022-07-21 13:11:12 +0000] Running:  ghe-config secrets.launch.receiver-webhook-secret  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-receiver.hcl | grep -Po 'WEBHOOK_SECRET\h*=\h*\"\K[a-f0-9]{64}'  (silent)
+[2022-07-21 13:11:12 +0000] Exit Code: 0
+[2022-07-21 13:11:12 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT hook_config_attributes.value FROM hook_config_attributes INNER JOIN hooks ON hook_config_attributes.hook_id=hooks.id INNER JOIN integrations ON hooks.installation_target_id=integrations.id AND hooks.installation_target_type='Integration' WHERE integrations.name='GitHub Actions' AND hook_config_attributes.key='secret';" | tail -n1  (silent)
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] [35/45] ✅ [Secrets] Webhook Secrets Check - All receiver secrets match
+[2022-07-21 13:11:13 +0000] Finished [Secrets] Webhook Secrets Check (Class: WebhookSecretsCheck)
+[2022-07-21 13:11:13 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:13 +0000] Starting [Secrets] Private Key Check (Class: PrivateKeyCheck)...
+[2022-07-21 13:11:13 +0000] Running:  ghe-config 'secrets.launch.app-private-key'  (silent)
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-deployer.hcl | grep -Po 'GITHUB_APP_PRIVATE_KEY\h*=\h*\"\K[^\"]*' (silent)
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-heal-workflows.hcl | grep -Po 'GITHUB_APP_PRIVATE_KEY\h*=\h*\"\K[^\"]*'  (silent)
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT integration_keys.public_pem FROM integration_keys INNER JOIN integrations ON integration_keys.integration_id=integrations.id WHERE integrations.name=\"GitHub Actions\" order by integration_keys.id desc limit 1;" | tail -n 1 | perl -pe 's/\\n/\n/g' | openssl rsa -modulus -noout -pubin 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] Modulus=E5BC80EDA71F3C6F3BA544174749A0A6452C6ED3CA21E3C7E0CB6378085D16F01A6264DD6626E8604E599D61361CCC340528B1A5528AC508AA94B2BF747ACE58D3BF0A1750CE6A3330311FD67D9EEA0D81FBF1E8D46712ACA94D7D1E48500E608F3BF39C8F2611AED3F46F29EE1073B59EC1CB1393C5DC5CF79747C77B6F58328A4F29101AC6860CD46CE40BC3B3BE580AD90C160D5F0605E46E35619BBD23B25E328F921AA77E968FBF226F68C231369842BCC1F291210600B78004BC66481E52EE64AF6F396E72AB35FC34AC3E2D10DA40317E764FBAFEECFA629E14D168B40339716050FEC80AB03F2B7B7E20823C53C4F91D0B44FD224384FAB2EFFF3E4B
+[2022-07-21 13:11:13 +0000] Running:  ghe-config 'secrets.launch.app-private-key' | openssl rsa -modulus -noout 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] Modulus=E5BC80EDA71F3C6F3BA544174749A0A6452C6ED3CA21E3C7E0CB6378085D16F01A6264DD6626E8604E599D61361CCC340528B1A5528AC508AA94B2BF747ACE58D3BF0A1750CE6A3330311FD67D9EEA0D81FBF1E8D46712ACA94D7D1E48500E608F3BF39C8F2611AED3F46F29EE1073B59EC1CB1393C5DC5CF79747C77B6F58328A4F29101AC6860CD46CE40BC3B3BE580AD90C160D5F0605E46E35619BBD23B25E328F921AA77E968FBF226F68C231369842BCC1F291210600B78004BC66481E52EE64AF6F396E72AB35FC34AC3E2D10DA40317E764FBAFEECFA629E14D168B40339716050FEC80AB03F2B7B7E20823C53C4F91D0B44FD224384FAB2EFFF3E4B
+[2022-07-21 13:11:13 +0000] [36/45] ✅ [Secrets] Private Key Check - All private keys match and pair with the public key
+[2022-07-21 13:11:13 +0000] Finished [Secrets] Private Key Check (Class: PrivateKeyCheck)
+[2022-07-21 13:11:13 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:13 +0000] Starting [Secrets] Public Key Check (Class: PublicKeyCheck)...
+[2022-07-21 13:11:13 +0000] Running:  ghe-config secrets.launch.app-public-key | grep -Pzo 'BEGIN PUBLIC KEY-----\s\K[a-zA-Z\d+\/\s]+' 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5byA7acfPG87pUQXR0mg
+pkUsbtPKIePH4MtjeAhdFvAaYmTdZiboYE5ZnWE2HMw0BSixpVKKxQiqlLK/dHrO
+WNO/ChdQzmozMDEf1n2e6g2B+/Ho1GcSrKlNfR5IUA5gjzvznI8mEa7T9G8p7hBz
+tZ7ByxOTxdxc95dHx3tvWDKKTykQGsaGDNRs5AvDs75YCtkMFg1fBgXkbjVhm70j
+sl4yj5Iap36Wj78ib2jCMTaYQrzB8pEhBgC3gAS8ZkgeUu5kr285bnKrNfw0rD4t
+ENpAMX52T7r+7PpinhTRaLQDOXFgUP7ICrA/K3t+III8U8T5HQtE/SJDhPqy7/8+
+SwIDAQAB
+ 
+[2022-07-21 13:11:13 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT integration_keys.public_pem FROM integration_keys INNER JOIN integrations ON integration_keys.integration_id=integrations.id WHERE integrations.name=\"GitHub Actions\" order by integration_keys.id desc limit 1;" | grep -Po 'BEGIN PUBLIC KEY-----\\n\K[a-zA-Z\d+\/(\\n)]+' 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5byA7acfPG87pUQXR0mg\npkUsbtPKIePH4MtjeAhdFvAaYmTdZiboYE5ZnWE2HMw0BSixpVKKxQiqlLK/dHrO\nWNO/ChdQzmozMDEf1n2e6g2B+/Ho1GcSrKlNfR5IUA5gjzvznI8mEa7T9G8p7hBz\ntZ7ByxOTxdxc95dHx3tvWDKKTykQGsaGDNRs5AvDs75YCtkMFg1fBgXkbjVhm70j\nsl4yj5Iap36Wj78ib2jCMTaYQrzB8pEhBgC3gAS8ZkgeUu5kr285bnKrNfw0rD4t\nENpAMX52T7r+7PpinhTRaLQDOXFgUP7ICrA/K3t+III8U8T5HQtE/SJDhPqy7/8+\nSwIDAQAB\n
+[2022-07-21 13:11:13 +0000] [37/45] ✅ [Secrets] Public Key Check - All public keys match
+[2022-07-21 13:11:13 +0000] Finished [Secrets] Public Key Check (Class: PublicKeyCheck)
+[2022-07-21 13:11:13 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:13 +0000] Starting [Secrets] App ID Check (Class: AppIdCheck)...
+[2022-07-21 13:11:13 +0000] Running:  ghe-config secrets.launch.app-id 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 1
+[2022-07-21 13:11:13 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT integrations.id FROM integrations WHERE integrations.name='GitHub Actions';" | tail -n1 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 1
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-deployer.hcl | grep -Po 'GITHUB_APP_ID\h*=\h*\"\K[\d]+' 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 1
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-heal-workflows.hcl | grep -Po 'GITHUB_APP_ID\h*=\h*\"\K[\d]+' 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 1
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-receiver.hcl | grep -Po 'GITHUB_ACTIONS_APP_IDS\h*=\h*\"\K[\d]+' 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 1
+[2022-07-21 13:11:13 +0000] [38/45] ✅ [Secrets] App ID Check - All app IDs match
+[2022-07-21 13:11:13 +0000] Finished [Secrets] App ID Check (Class: AppIdCheck)
+[2022-07-21 13:11:13 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:11:13 +0000] Starting [Secrets] App Relay ID Check (Class: AppRelayIdCheck)...
+[2022-07-21 13:11:13 +0000] Running:  ghe-config secrets.launch.app-relay-id | base64 -d 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 03:App1
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-heal-workflows.hcl | grep -Po 'GITHUB_SECRETS_APP_RELAY_ID\h*=\h*\"\K[A-Za-z\d+\/=]+' | base64 -d 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 03:App1
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-deployer.hcl | grep -Po 'GITHUB_SECRETS_APP_RELAY_ID\h*=\h*\"\K[A-Za-z\d+\/=]+' | base64 -d 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 03:App1
+[2022-07-21 13:11:13 +0000] Running:  cat /etc/nomad-jobs/launch/launch-receiver.hcl | grep -Po 'GITHUB_SECRETS_APP_RELAY_ID\h*=\h*\"\K[A-Za-z\d+\/=]+' | base64 -d 
+[2022-07-21 13:11:13 +0000] Exit Code: 0
+[2022-07-21 13:11:13 +0000] Result from the command:
+[2022-07-21 13:11:13 +0000] 03:App1
+[2022-07-21 13:11:13 +0000] Running:  github-env eval "echo \"puts GitHub.launch_github_app.global_relay_id\" | bin/safe-ruby -r /github/config/environment | base64 -d" 
+[2022-07-21 13:12:11 +0000] Exit Code: 0
+[2022-07-21 13:12:11 +0000] Result from the command:
+[2022-07-21 13:12:11 +0000] 03:App1
+[2022-07-21 13:12:11 +0000] [39/45] ✅ [Secrets] App Relay ID Check - All app relay IDs match
+[2022-07-21 13:12:11 +0000] Finished [Secrets] App Relay ID Check (Class: AppRelayIdCheck)
+[2022-07-21 13:12:11 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:12:11 +0000] Starting [Secrets] Bot ID Check (Class: BotIdCheck)...
+[2022-07-21 13:12:11 +0000] Running:  ghe-config secrets.launch.bot-relay-id | base64 -d 
+[2022-07-21 13:12:11 +0000] Exit Code: 0
+[2022-07-21 13:12:11 +0000] Result from the command:
+[2022-07-21 13:12:11 +0000] 03:Bot15
+[2022-07-21 13:12:11 +0000] Running:  cat /etc/nomad-jobs/launch/launch-receiver.hcl | grep -Po 'GITHUB_ACTIONS_BOT_NODE_IDS\h*=\h*\"\K[A-Za-z\d+\/=]+' | base64 -d 
+[2022-07-21 13:12:11 +0000] Exit Code: 0
+[2022-07-21 13:12:11 +0000] Result from the command:
+[2022-07-21 13:12:11 +0000] 03:Bot15
+[2022-07-21 13:12:11 +0000] Running:  /usr/local/share/enterprise/github-mysql "SELECT integrations.bot_id FROM integrations WHERE integrations.name='GitHub Actions';" | tail -n1 
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Result from the command:
+[2022-07-21 13:12:12 +0000] 15
+[2022-07-21 13:12:12 +0000] [40/45] ✅ [Secrets] Bot ID Check - All bot relay IDs match
+[2022-07-21 13:12:12 +0000] Finished [Secrets] Bot ID Check (Class: BotIdCheck)
+[2022-07-21 13:12:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:12:12 +0000] Starting [Secrets] Launch Token Communications (Class: LaunchTokenCommunications)...
+[2022-07-21 13:12:12 +0000] Running:  ghe-config secrets.launch.token-oauth-key  (silent)
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Running:  ghe-config secrets.actions.OAuthS2SSigningKey  (silent)
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-deployer.hcl | grep TOKEN_SERVICE_KEY_PEM  (silent)
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Running:  ghe-config secrets.launch.token-oauth-cert  (silent)
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Running:  ghe-config secrets.actions.OAuthS2SSigningCert  (silent)
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Running:  cat /etc/nomad-jobs/launch/launch-deployer.hcl | grep TOKEN_SERVICE_CERT_PEM  (silent)
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Running:  ghe-config secrets.launch.token-oauth-cert | openssl x509 -fingerprint -noout | cut -d "=" -f 2 | sed 's/://g'  (silent)
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] [41/45] ✅ [Secrets] Launch Token Communications - Launch and token communications secrets match
+[2022-07-21 13:12:12 +0000] Finished [Secrets] Launch Token Communications (Class: LaunchTokenCommunications)
+[2022-07-21 13:12:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:12:12 +0000] Starting [System] Total Memory (Class: TotalMemory)...
+[2022-07-21 13:12:12 +0000] Running: echo "select memory_total/(1024 * 1024 * 1024) from memory_info;" | osqueryi --list --noheader 2>&1
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Result from the command:
+[2022-07-21 13:12:12 +0000] 62
+[2022-07-21 13:12:12 +0000] [42/45] ✅ [System] Total Memory - Total memory 62GB is above the min 59GB
+[2022-07-21 13:12:12 +0000] Finished [System] Total Memory (Class: TotalMemory)
+[2022-07-21 13:12:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:12:12 +0000] Starting [System] Disk Size (Class: DiskSize)...
+[2022-07-21 13:12:12 +0000] Running:  echo "select blocks*blocks_size/(1024 * 1024 * 1024) from mounts where path = '/';" | osqueryi --list --noheader 2>&1 
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Result from the command:
+[2022-07-21 13:12:12 +0000] 146
+[2022-07-21 13:12:12 +0000] Running:  echo "select blocks*blocks_size/(1024 * 1024 * 1024) from mounts where path = '/data/user';" | osqueryi --list --noheader 2>&1 
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Result from the command:
+[2022-07-21 13:12:12 +0000] 295
+[2022-07-21 13:12:12 +0000] [43/45] ❗️ [System] Disk Size - Data Disk 295GB is less than the min 300GB - see https://github.com/github/enterprise-diagnostic-scripts/issues/6
+[2022-07-21 13:12:12 +0000] Finished [System] Disk Size (Class: DiskSize)
+[2022-07-21 13:12:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:12:12 +0000] Starting [System] Virtual CPU requirements (Class: VCPURequirements)...
+[2022-07-21 13:12:12 +0000] Running:  echo "select cpu_logical_cores from system_info;" | osqueryi --list --noheader 2>&1 
+[2022-07-21 13:12:12 +0000] Exit Code: 0
+[2022-07-21 13:12:12 +0000] Result from the command:
+[2022-07-21 13:12:12 +0000] 16
+[2022-07-21 13:12:12 +0000] [44/45] ✅ [System] Virtual CPU requirements - The instance has 16 vCPUs meets the required 8 based on the number of active users
+[2022-07-21 13:12:12 +0000] Finished [System] Virtual CPU requirements (Class: VCPURequirements)
+[2022-07-21 13:12:12 +0000] ----------------------------------------------------------------------------------------------------
+[2022-07-21 13:12:12 +0000] Starting [Nomad] Jobs Failures (Class: NomadJobsFailures)...
+[2022-07-21 13:12:12 +0000] Running:  grep '==> Evaluation ".*" finished with status "failed"' /data/user/common/ghe-config.log 2>&1 
+[2022-07-21 13:12:12 +0000] Exit Code: 1
+[2022-07-21 13:12:12 +0000] Result from the command:
+[2022-07-21 13:12:12 +0000] 
+[2022-07-21 13:12:12 +0000] [45/45] ✅ [Nomad] Jobs Failures - No evidence of failed Nomad Jobs
+[2022-07-21 13:12:12 +0000] Finished [Nomad] Jobs Failures (Class: NomadJobsFailures)
+[2022-07-21 13:12:12 +0000] ℹ️  Diagnostic scripts completed successfully
